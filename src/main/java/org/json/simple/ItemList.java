@@ -5,6 +5,7 @@
 package org.json.simple;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -40,7 +41,9 @@ public class ItemList {
 	}
 	
 	public String[] getArray(){
-		return (String[])this.items.toArray();
+		Object[] objectArray = this.items.toArray();
+		String[] stringArray = Arrays.copyOf(objectArray, objectArray.length, String[].class);
+		return stringArray;
 	}
 	
 	public void split(String s,String sp,List append,boolean isMultiToken){
