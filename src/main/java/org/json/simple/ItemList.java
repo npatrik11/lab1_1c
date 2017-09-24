@@ -42,8 +42,7 @@ public class ItemList {
 	
 	public String[] getArray(){
 		Object[] objectArray = this.items.toArray();
-		String[] stringArray = Arrays.copyOf(objectArray, objectArray.length, String[].class);
-		return stringArray;
+		return Arrays.copyOf(objectArray, objectArray.length, String[].class);
 	}
 	
 	public void split(String s,String sp,List append,boolean isMultiToken){
